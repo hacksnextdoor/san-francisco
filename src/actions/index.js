@@ -1,8 +1,9 @@
+
 export function inc(byN) {
-  return: {
-    type:'INC'
+  return {
+    type: 'INC',
     payload: {
-      count: 5
+      count: byN
     }
   }
 }
