@@ -1,2 +1,2 @@
-import countReducer from './countReducer';
+import countReducer from './count.reducer';
 export default countReducer;
