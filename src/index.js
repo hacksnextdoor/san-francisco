@@ -37,4 +37,13 @@ store.dispatch({
   payload: axios.get('https://rydeboard-dev.now.sh/api/rides')
 })
 
+/*
+  PS: using promise-middleware forces you to fromat your reducers to matching
+  'promise-middleware' conventions ('FOO_PENDING', 'FOO_FULLFILLED', 'FOO_REJECTED')
+  instead of the nomenclature we have setup using 'thunk'.
+  Thunk == More control
+  Promise == Cleaner formatting set for you
+*/
+
+
 ReactDOM.render(<App />, document.getElementById('root'));
