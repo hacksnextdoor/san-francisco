@@ -19,16 +19,22 @@ store.subscribe(() => {
 // store.dispatch(dec(1))
 // store.dispatch(dec(5))
 
-// Basic fetch operations to some api
-store.dispatch((dispatch) => {
-    dispatch({type:'FETCH_DATA'})
-    axios.get('https://rydeboard-dev.now.sh/api/rides')
-    .then((response) => {
-        dispatch({type:'FETCH_DATA_COMPLETE', payload:response})
-    })
-    .catch((err) => {
-        dispatch({type:'FETCH_DATA_ERROR', payload:err})
-    })
+// Basic fetch operations to some api w/ thunk
+// store.dispatch((dispatch) => {
+//     dispatch({type:'FETCH_DATA'})
+//     axios.get('https://rydeboard-dev.now.sh/api/rides')
+//     .then((response) => {
+//         dispatch({type:'FETCH_DATA_COMPLETE', payload:response})
+//     })
+//     .catch((err) => {
+//         dispatch({type:'FETCH_DATA_ERROR', payload:err})
+//     })
+// })
+
+//Basic fetch with promise middleware
+store.dispatch({
+  type:"FOO",
+  payload: axios.get('https://rydeboard-dev.now.sh/api/rides')
 })
 
 ReactDOM.render(<App />, document.getElementById('root'));
