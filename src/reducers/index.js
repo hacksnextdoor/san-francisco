@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux'
-import countReducer from './count.reducer';
-import fetchReducer from './fetch.reducer'
+import count from './count.reducer';
+import fetch from './fetch.reducer';
+import user from './user.reducer';
 
 export default combineReducers({
-  countReducer,
-  fetchReducer
+  count,
+  fetch,
+  user,
 });

@@ -15,3 +15,13 @@ export function dec(byN) {
     }
   }
 }
+
+export function fetchMockUser() {
+  return {
+    type: 'FETCH_MOCK_USER',
+    payload: {
+      name: 'Hugh',
+      age: '24'
+    }
+  }
+}

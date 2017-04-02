@@ -1,4 +1,5 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import App from './components/App.jsx';
@@ -32,10 +33,10 @@ store.subscribe(() => {
 // })
 
 //Basic fetch with promise middleware
-store.dispatch({
-  type:"FOO",
-  payload: axios.get('https://rydeboard-dev.now.sh/api/rides')
-})
+// store.dispatch({
+//   type:"FOO",
+//   payload: axios.get('https://rydeboard-dev.now.sh/api/rides')
+// })
 
 /*
   PS: using promise-middleware forces you to fromat your reducers to matching
@@ -46,4 +47,7 @@ store.dispatch({
 */
 
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <Provider store={store}>
+  <App />
+  </Provider>, document.getElementById('root'));
